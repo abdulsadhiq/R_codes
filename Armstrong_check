@@ -1,0 +1,15 @@
+armsd<-function(x)
+{
+  oldd1<-sumd<-0
+  for (i in 1:nchar(x))
+  {
+    d1<-x%%10^i
+    d2<-(d1-oldd1)/10^(i-1)
+    oldd1<-d1
+    sumd<-sumd+(d2^nchar(x))
+  }
+  ifelse(sumd==x,"Y","N")
+}
+
+armsd(371)
+armsd(1634)
